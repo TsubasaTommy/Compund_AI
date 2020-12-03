@@ -1,20 +1,9 @@
-# Clearing_margin_calculater
+# Compound_AI(Clearing_margin_calculater)ロット計算
+it may needs to change name :/ 
+## Usage(使い方)
+this is so easy and simple.
+you can understand when first watch it!
 
-## Build Setup
-
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+now you can try it!
+↓
+[Compound_AI](https://flamboyant-minsky-54e98b.netlify.app/) <-you can try it!(実際にご利用いただけます。)
