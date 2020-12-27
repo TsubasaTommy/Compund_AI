@@ -22,7 +22,7 @@
             />
           </v-col>
           <v-col cols="4">
-            <v-combobox
+            <v-text-field
               label="1lot=通貨量"
               :value="$store.state.lot_rate"
               @input="set_lot_rate"
@@ -64,7 +64,17 @@
               class="mx-auto"
               max-width="550"
             >
-              <v-card-title class="font-weight-regular" v-text="'RESULT'" />
+              <v-row justify="space-between">
+                <v-card-title class="font-weight-regular ml-5" v-text="'RESULT'" />
+                <v-col cols="4">
+                  <v-text-field
+                    label="利確後PIPs"
+                    v-model="result_pip"
+                    type="Number"
+                    suffix="pips"
+                  ></v-text-field>
+                </v-col>
+              </v-row>
               <v-divider></v-divider>
               <v-card-text>
                 <v-row justify="center">
@@ -82,6 +92,12 @@
                       <v-card-subtitle v-text="'Lots'" class="pb-0"/>
                       <v-card-text v-text="Math.round(calc_lot * 100)/100" />
                     </v-card> 
+                  </v-col>
+                  <v-col cols="6">
+                    <v-card flat>
+                      <v-card-subtitle v-text="'利益(%)'" class="pb-0" />
+                      <v-card-text v-text="Math.round(calc_result_per *100)/100 + '%'"/>
+                    </v-card>
                   </v-col>
                   <v-col cols="6">
                     <v-card flat>
@@ -118,6 +134,9 @@ export default {
       pair:data,
     }
   },
+  data:()=>({
+    result_pip:0
+  }),
   methods:{
     set_amount(e){this.$store.commit('set_amount',e)},
     set_sl_pip(e){this.$store.commit('set_sl_pip',e)},
@@ -147,6 +166,9 @@ export default {
       const amount = this.$store.state.amount / (this.$store.state.sl_pip * 0.01) * (this.$store.state.risk / 100)
       console.log(this.calc_cur_rate())
       return Math.floor(amount / (this.$store.state.amount /this.calc_cur_rate()))//通貨ペアのレートを適用する
+    },
+    calc_result_per(){
+      return this.result_pip / this.$store.state.sl_pip * this.$store.state.risk
     }
   },
   async mounted(){
