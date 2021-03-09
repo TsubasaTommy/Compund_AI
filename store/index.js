@@ -32,6 +32,6 @@ export const mutations = {
   },
   set_lot_rate(state,x){
     state.lot_rate = Number(x)
-    localStorage.setItem('lot',state.lot_rate)
+    localStorage.setItem('lot_rate',state.lot_rate)
   }
 }

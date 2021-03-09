@@ -164,15 +164,11 @@ export default {
     },
     calc_leverage(){
       const amount = this.$store.state.amount / (this.$store.state.sl_pip * 0.01) * (this.$store.state.risk / 100)
-      console.log(this.calc_cur_rate())
-      return Math.floor(amount / (this.$store.state.amount /this.calc_cur_rate()))//通貨ペアのレートを適用する
+      return Math.floor(amount / (this.$store.state.amount / this.calc_cur_rate() ))//通貨ペアのレートを適用する
     },
     calc_result_per(){
       return this.result_pip / this.$store.state.sl_pip * this.$store.state.risk
     }
   },
-  async mounted(){
-    console.log(this.pair)
-  }
 }
 </script>
