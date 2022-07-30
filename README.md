@@ -1,8 +1,6 @@
-# Compound_AI(Clearing_margin_calculater)ロット計算
-it may needs to change name :/ 
-## Usage(使い方)
-this is so easy and simple.  
-you can understand when first watch it!  
+# Compound_AIロット計算
+GUIによって可視性が高くなったFX用ロット計算機です。
+<br>ECB(欧州中央銀行)からレートを参照し、入力された情報を元にリスクを可視化します。
   
 now you can try it!  
 ↓  
